@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/api/",
+  "proxy": "https://sandip-blog-api.herokuapp.com/api/",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^27.1.0",
     "@ckeditor/ckeditor5-editor-inline": "^27.1.0",
