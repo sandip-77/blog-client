@@ -12,7 +12,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 const SinglePost = () => {
-    const PF = "http://localhost:5000/images/"
+    const PF = "https://sandip-blog-api.herokuapp.com/images/"
 
     const { user } = useContext(Context);
     const location = useLocation();
@@ -24,7 +24,7 @@ const SinglePost = () => {
 
     useEffect(() => {
         const getPosts = async () => {
-            const res = await axios.get("/posts/"+ path );
+            const res = await axios.get("https://sandip-blog-api.herokuapp.com/api/posts/"+ path );
             setPost(res.data);
             setTitle(res.data.title);
             setDesc(res.data.desc);
@@ -34,7 +34,7 @@ const SinglePost = () => {
 
     const handleDelete = async  () => {
         try{
-            await axios.delete(`/posts/${path}` , {data : {username: user.username}})
+            await axios.delete(`https://sandip-blog-api.herokuapp.com/api/posts/${path}` , {data : {username: user.username}})
             console.log('run');
             window.location.reload();
             window.location.replace("/");
@@ -45,7 +45,7 @@ const SinglePost = () => {
 
     const handleUpdate = async() => {
         try{
-            await axios.put(`/posts/${path}` , {username: user.username, title, desc})
+            await axios.put(`https://sandip-blog-api.herokuapp.com/api/posts/${path}` , {username: user.username, title, desc})
             console.log('run');
             setUpdateMode(false);
         }catch(err){
@@ -76,7 +76,7 @@ const SinglePost = () => {
                 <div className="singlePostInfo">
                     <span>
                         Author:
-                        <Link className="link" to={`/?user=${post.username}`}>
+                        <Link className="link" to={`https://sandip-blog-api.herokuapp.com/api/?user=${post.username}`}>
                          <b className="singlePostAuthor">{post.username}  </b>
                         </Link>
                     </span>

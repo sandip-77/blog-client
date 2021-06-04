@@ -35,7 +35,7 @@ const Register = () => {
             }
           }
         try{
-            const res = await axios.post("/auth/register", user);
+            const res = await axios.post("https://sandip-blog-api.herokuapp.com/api/auth/register", user);
             res.data && window.location.replace("/login")
         } catch(err){
             setError(true);

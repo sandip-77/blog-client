@@ -7,7 +7,7 @@ const TopBar = () => {
     const handleLogout = () => {
         dispatch({type:"LOGOUT"})
     };
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://sandip-blog-api.herokuapp.com/images/"
 
     return (
         <div className="top">
