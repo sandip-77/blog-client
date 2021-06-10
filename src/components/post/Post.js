@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 const Post = ({post}) => {
 
-    const PF = "https://sandip-blog-api.herokuapp.com/images/"
+    const PF = "https://sandyblogapi.herokuapp.com/images/"
     return (
         <div className="post">
             {post.photo && (
@@ -16,11 +16,11 @@ const Post = ({post}) => {
            
            <div className="postInfo">
                <div className="postCat">
-               <Link className="link" to={`https://sandip-blog-api.herokuapp.com/api/?cat=${post.catagories[0]}`}>
+               <Link className="link" to={`https://sandyblogapi.herokuapp.com/?cat=${post.catagories[0]}`}>
                 <span className="postCat">{post.catagories[0]}</span>
                </Link>
                </div>
-               <Link className="link" to={`https://sandip-blog-api.herokuapp.com/api/post/${post._id}`}>
+               <Link className="link" to={`https://sandyblogapi.herokuapp.com/api/post/${post._id}`}>
                 <span className="postTitle">
                     {post.title}
                 </span>

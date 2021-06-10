@@ -9,7 +9,7 @@ const Sidebar = () => {
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("https://sandip-blog-api.herokuapp.com/api/categories")
+            const res = await axios.get("https://sandyblogapi.herokuapp.com/api/categories")
             setCats(res.data);
         }
         getCats();
@@ -26,7 +26,7 @@ const Sidebar = () => {
                 <ul className='sidebarList'>
                 {
                     cats.map((c) => (
-                        <Link key={c._id} className="link" to={`https://sandip-blog-api.herokuapp.com/api/?cat=${c.name}`}>
+                        <Link key={c._id} className="link" to={`https://sandyblogapi.herokuapp.com/api/?cat=${c.name}`}>
                             <li  className="sidebarListItem">{c.name}</li>
                         </Link>
                     ))

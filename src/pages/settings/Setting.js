@@ -12,7 +12,7 @@ const Setting = () => {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const PF = "hhttps://sandip-blog-api.herokuapp.com/images/"
+  const PF = "https://sandyblogapi.herokuapp.com//images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Setting = () => {
       data.append("file", file)
       upadatedUser.profilePic = filename;
       try{
-        await axios.post("https://sandip-blog-api.herokuapp.com/api/upload", data);
+        await axios.post("https://sandyblogapi.herokuapp.com/api/upload", data);
       }catch(err){
         console.log(err);
       }

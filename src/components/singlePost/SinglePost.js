@@ -12,7 +12,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 const SinglePost = () => {
-    const PF = "https://sandip-blog-api.herokuapp.com/images/"
+    const PF = "https://sandyblogapi.herokuapp.com/images/"
 
     const { user } = useContext(Context);
     const location = useLocation();
@@ -45,7 +45,7 @@ const SinglePost = () => {
 
     const handleUpdate = async() => {
         try{
-            await axios.put(`https://sandip-blog-api.herokuapp.com/api/posts/${path}` , {username: user.username, title, desc})
+            await axios.put(`https://sandyblogapi.herokuapp.com/api/posts/${path}` , {username: user.username, title, desc})
             console.log('run');
             setUpdateMode(false);
         }catch(err){
@@ -76,7 +76,7 @@ const SinglePost = () => {
                 <div className="singlePostInfo">
                     <span>
                         Author:
-                        <Link className="link" to={`https://sandip-blog-api.herokuapp.com/api/?user=${post.username}`}>
+                        <Link className="link" to={`https://sandyblogapi.herokuapp.com/api/?user=${post.username}`}>
                          <b className="singlePostAuthor">{post.username}  </b>
                         </Link>
                     </span>
